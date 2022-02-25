@@ -41,3 +41,14 @@ exports.deleteOne = async (title) =>{
     console.log(error)
   }
 }
+
+exports.findOne = async (title, actor) => {
+  try {
+    await Movie.findOne(
+      {title: title}
+    )
+    return {title: title, actor: actor}
+  } catch (error) {
+    console.log(error)
+  }
+}
